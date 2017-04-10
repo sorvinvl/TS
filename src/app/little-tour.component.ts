@@ -8,9 +8,12 @@ let newHero: Number=0;
     <td *ngFor="let her of heroes">{{her}}</td>
   </tr>
 </table><br>
-    <input type="number" min="1" value="5" max="9" style="color: green; font-size: 2em" #newHero
-     (keyup.enter)="addHero(newHero.value)"/>
-    <button style="color: green; font-size: 2em" (click)="addHeroRnd()">+??</button>
+    <input type="number" min="1" value="5" max="9" 
+    style="color: green; font-size: 2em" 
+     #newHero
+     (keyup.enter)="addHero(newHero.value)"
+     (keyup)="ChKey(newHero.value)"><h3>....... </h3>
+    <button style="color: green; font-size: 2em" (click)="addHeroRnd()">AddRnd</button>
 `
 })
 export class LittleTourComponent {
@@ -21,14 +24,16 @@ export class LittleTourComponent {
     {
       this.heroes.push(newHero);
       Rnd=Math.round(Math.random()*8+1);
-      //this.heroes.push(this.heroes.length);
-      console.log(newHero,this.heroes[this.heroes.length-1]);
+      console.log(this.heroes[this.heroes.length-1],newHero);
     }
   }
   addHeroRnd()
  { let  Rnd=Math.round(Math.random()*8+1);
     if (Rnd >0) this.heroes.push(Rnd);
     console.log(Rnd, Rnd.toFixed(1),this.heroes[this.heroes.length-1]);
-  }
-  
+ }
+ ChKey(newHero: Number)
+ {
+  if (newHero > 9)  console.log(newHero);
+ } 
 }
