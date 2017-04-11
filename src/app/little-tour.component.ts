@@ -12,8 +12,9 @@ let newHero: Number=0;
     style="color: green; font-size: 2em" 
      #newHero
      (keyup.enter)="addHero(newHero.value)"
-     (keyup)="newHero.value=ChKey(newHero.value)"><h3>....{{value}}... </h3>
-    <button style="color: green; font-size: 2em" (click)="addHeroRnd()">AddRnd</button>
+     (keyup)="newHero.value=ChKey(newHero.value)">
+    <button style="color: green; font-size: 2em" (click)="addHero(newHero.value)">Добавить элемент</button>
+    <button style="color: green; font-size: 2em" (click)="addHeroRnd()">Случайный элемент</button>
 `
 })
 export class LittleTourComponent {
@@ -23,8 +24,7 @@ export class LittleTourComponent {
     if (newHero >0 ) 
     {
       this.heroes.push(newHero);
-      Rnd=Math.round(Math.random()*8+1);
-      console.log(this.heroes[this.heroes.length-1],newHero);
+    console.log(this.heroes[this.heroes.length-1],newHero);
     }
   }
   addHeroRnd()
