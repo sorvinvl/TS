@@ -2,21 +2,24 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'key-up1',
+  selector: 'NumX',
   template: `
-    <input (keyup)="onKey($event)">
-    <p>{{values}}</p>
+     <input type="number" min="1" value="5" max="9" 
+    style="color: green; font-size: 2em" 
+     #nX
+     (keyup.enter)="findP(nX.value)"
+     (keyup)="nX.value=ChKey(nX.value)">
+    <button style="color: green; font-size: 2em" 
+    (click)="findP(nX.value)">Найти Р</button><br><hr>
   `
 })
 export class KeyUpComponent_v1 {
   values = '';
-
-  /*
-  onKey(event: any) { // without type info
-    this.values += event.target.value + ' | ';
-  }
-  */
-
+ChKey(newHero: Number):Number
+ {
+  if (newHero > 9)  newHero=9; 
+  return newHero;
+ } 
   onKey(event: KeyboardEvent) { // with type info
     this.values += (<HTMLInputElement>event.target).value + ' | ';
   }

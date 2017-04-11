@@ -13,8 +13,10 @@ let newHero: Number=0;
      #newHero
      (keyup.enter)="addHero(newHero.value)"
      (keyup)="newHero.value=ChKey(newHero.value)">
-    <button style="color: green; font-size: 2em" (click)="addHero(newHero.value)">Добавить элемент</button>
-    <button style="color: green; font-size: 2em" (click)="addHeroRnd()">Случайный элемент</button>
+    <button style="color: green; font-size: 2em" 
+    (click)="addHero(newHero.value)">Добавить элемент</button><br><hr>
+    <button style="color: green; font-size: 2em" 
+    (click)="addHeroRnd()">Случайный элемент</button>
 `
 })
 export class LittleTourComponent {
@@ -30,7 +32,7 @@ export class LittleTourComponent {
   addHeroRnd()
  { let  Rnd=Math.round(Math.random()*8+1);
     if (Rnd >0) this.heroes.push(Rnd);
-    console.log(Rnd, Rnd.toFixed(1),this.heroes[this.heroes.length-1]);
+    console.log(Rnd,this.heroes[this.heroes.length-1]);
  }
  ChKey(newHero: Number):Number
  {
