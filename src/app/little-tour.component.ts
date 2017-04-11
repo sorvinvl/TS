@@ -12,7 +12,7 @@ let newHero: Number=0;
     style="color: green; font-size: 2em" 
      #newHero
      (keyup.enter)="addHero(newHero.value)"
-     (keyup)="ChKey(newHero.value)"><h3>....... </h3>
+     (keyup)="newHero.value=ChKey(newHero.value)"><h3>....{{value}}... </h3>
     <button style="color: green; font-size: 2em" (click)="addHeroRnd()">AddRnd</button>
 `
 })
@@ -32,8 +32,9 @@ export class LittleTourComponent {
     if (Rnd >0) this.heroes.push(Rnd);
     console.log(Rnd, Rnd.toFixed(1),this.heroes[this.heroes.length-1]);
  }
- ChKey(newHero: Number)
+ ChKey(newHero: Number):Number
  {
-  if (newHero > 9)  console.log(newHero);
+  if (newHero > 9)  newHero=9; 
+  return newHero;
  } 
 }

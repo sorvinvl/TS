@@ -57,14 +57,14 @@ export class KeyUpComponent_v3 {
 @Component({
   selector: 'key-up4',
   template: `
-    <input #box
+    <input type="number" #box
       (keyup.enter)="update(box.value)"
-      (blur)="update(box.value)">
+      (blur)="box.value=update(box.value)">
 
     <p>{{value}}</p>
   `
 })
 export class KeyUpComponent_v4 {
-  value = '';
-  update(value: string) { this.value = value; }
+  value = 0;
+  update(value: number):number { this.value = value; return 0;}
 }
