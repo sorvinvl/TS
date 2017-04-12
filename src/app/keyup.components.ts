@@ -1,6 +1,6 @@
 /* tslint:disable:class-name component-class-suffix */
 import { Component } from '@angular/core';
-
+import { LittleTourComponent } from './little-tour.component'
 @Component({
   selector: 'NumX',
   template: `
@@ -15,16 +15,16 @@ import { Component } from '@angular/core';
 })
 export class KeyUpComponent_v1 {
   values = '';
-ChKey(newHero: Number):Number
+ChKey(newHero: number):number
  {
   if (newHero > 9)  newHero=9; 
   return newHero;
  } 
-  onKey(event: KeyboardEvent) { // with type info
-    this.values += (<HTMLInputElement>event.target).value + ' | ';
+ findP(nX: number)
+   {
+   console.log(LittleTourComponent.call);
   }
 }
-
 //////////////////////////////////////////
 
 @Component({
@@ -60,14 +60,14 @@ export class KeyUpComponent_v3 {
 @Component({
   selector: 'key-up4',
   template: `
-    <input type="number" #box
+    <input #box
       (keyup.enter)="update(box.value)"
-      (blur)="box.value=update(box.value)">
+      (blur)="update(box.value)">
 
     <p>{{value}}</p>
   `
 })
 export class KeyUpComponent_v4 {
-  value = 0;
-  update(value: number):number { this.value = value; return 0;}
+  value = '';
+  update(value: string) { this.value = value; }
 }
