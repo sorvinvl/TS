@@ -1,27 +1,30 @@
 /* tslint:disable:class-name component-class-suffix */
 import { Component } from '@angular/core';
+import { LittleTourComponent } from './little-tour.component';
 
 @Component({
   selector: 'NumX',
   template: `
      <input type="number" min="1" value="5" max="9" 
-    style="color: green; font-size: 2em" 
+    style="color: green; font-size: 1em" 
      #nX
      (keyup.enter)="findP(nX.value)"
      (keyup)="nX.value=ChKey(nX.value)">
-    <button style="color: green; font-size: 2em" 
-    (click)="findP(nX.value)">Найти Р</button><br><hr>
+    <button style="color: green; font-size: 1em" 
+    (click)="nP=findP(nX.value)">Найти Р</button><br><br>
+    <p>P={{nX}}</p>
   `
 })
 export class KeyUpComponent_v1 {
   values = '';
-ChKey(newHero: Number):Number
+ChKey(newHero: number):number
  {
   if (newHero > 9)  newHero=9; 
   return newHero;
  } 
-  onKey(event: KeyboardEvent) { // with type info
-    this.values += (<HTMLInputElement>event.target).value + ' | ';
+  findP(nX: number):number { 
+    console.log(LittleTourComponent);
+    return nX;
   }
 }
 
