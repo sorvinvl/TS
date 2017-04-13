@@ -29,44 +29,30 @@ let newHero: number=0;
 `
 })
 export class LittleTourComponent {
-  public heroes = [2, 3, 5, 5, 5, 5, 5, 5, 5];
+  heroes = [2, 3, 4, 5, 5, 6, 5, 8, 9];
+
   addHero(newHero: number)
  { let Rnd = this.heroes.length;
     if (newHero >0 ) 
-    {
-      this.heroes.push(newHero);
-    console.log(this.heroes[this.heroes.length-1],newHero);
-    }
-  }
+        this.heroes.push(newHero); }
+
   addHeroRnd()
  { let  Rnd=Math.round(Math.random()*8+1);
-    if (Rnd >0) this.heroes.push(Rnd);
-    console.log(Rnd,this.heroes[this.heroes.length-1]);
- }
+    if (Rnd >0) this.heroes.push(Rnd);}
+
  ChKey(newHero: number):number
- {
-  if (newHero > 9)  newHero=9; 
-  return newHero;
- } 
+ {if (newHero > 9)  newHero=9; 
+  return newHero;} 
+
  findP(nX: number):number 
  {var nO: number=0; 
   var nI: number=0;
-  var nM: number[]=[0];
-
   for (var item=0; item <this.heroes.length; item++) 
-    if (this.heroes[item]==nX) {nO++; nM[item]=1;} 
-    else  nM[item]=0;
-
-    console.log(nM, nM.length, nO, nI);
-    
-    for (var item=0; item <this.heroes.length; item++){
-        console.log(nM, nM.length, "item=", item, "nO=",nO, "nI=",nI);
+    if (this.heroes[item]==nX) nO++; 
+    for (var item=0; item <this.heroes.length; item++)
         if (nO==nI) return item;
         else 
           if (this.heroes[item]==nX) nI++;
           else nO--;
-    }
-    return item; 
-//   console.log(this.heroes.length,nO,nI);
- }
+    return item;}
 }
