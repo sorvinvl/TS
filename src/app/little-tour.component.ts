@@ -29,7 +29,7 @@ let newHero: number=0;
 `
 })
 export class LittleTourComponent {
-  public heroes = [1, 5, 2, 3, 2, 8, 4, 6, 9];
+  public heroes = [2, 3, 5, 5, 5, 5, 5, 5, 5];
   addHero(newHero: number)
  { let Rnd = this.heroes.length;
     if (newHero >0 ) 
@@ -54,8 +54,8 @@ export class LittleTourComponent {
   var nM: number[]=[0];
 
   for (var item=0; item <this.heroes.length; item++) 
-    if (this.heroes[item]==nX) nM[item]=1; 
-    else {nO++; nM[item]=0;}
+    if (this.heroes[item]==nX) {nO++; nM[item]=1;} 
+    else  nM[item]=0;
 
     console.log(nM, nM.length, nO, nI);
     
