@@ -26,16 +26,9 @@ ChKey(newHero: number):number
   if (newHero > 9)  newHero=9; 
   return newHero;
  } 
-<<<<<<< HEAD
   findP(nX: number):number { 
     console.log(LittleTourComponent);
-    return nX;
-=======
- findP(nX: number)
-   {
-   console.log(LittleTourComponent.call);
->>>>>>> d27d47904c2c3c6ee760b389da5069d9316233ef
-  }
+    return nX;}
 }
 //////////////////////////////////////////
 
