@@ -1,11 +1,5 @@
 /* tslint:disable:class-name component-class-suffix */
 import { Component } from '@angular/core';
-<<<<<<< HEAD
-import { LittleTourComponent } from './little-tour.component';
-
-=======
-import { LittleTourComponent } from './little-tour.component'
->>>>>>> d27d47904c2c3c6ee760b389da5069d9316233ef
 @Component({
   selector: 'NumX',
   template: `
